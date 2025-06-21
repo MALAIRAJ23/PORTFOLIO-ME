@@ -113,5 +113,11 @@ document.addEventListener("DOMContentLoaded", () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  // Remove old IntersectionObserver for navbar
+  // Flip card logic for education section
+  const schoolCard = document.getElementById('school-card');
+  if (schoolCard) {
+    schoolCard.addEventListener('click', () => {
+      schoolCard.classList.toggle('flipped');
+    });
+  }
 });

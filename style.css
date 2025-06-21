@@ -104,8 +104,8 @@ header:has(.navbar-scrolled) {
   transition: transform 0.3s cubic-bezier(.4,0,.2,1);
 }
 .nav-links li a:hover, .nav-links li a:focus {
-  background: rgba(255,215,0,0.13);
-  color: #fff;
+  color: #D1C4E9;
+  text-decoration: underline;
 }
 .nav-links li a:hover::after, .nav-links li a:focus::after {
   transform: scaleX(1);
@@ -779,25 +779,6 @@ section, .about-card, .project-card, .contact-form {
   color: #D1C4E9;
   text-decoration: underline;
 }
-.nav-contact-btn {
-  background: #7E57C2;
-  color: #fff;
-  font-weight: 700;
-  border: none;
-  border-radius: 8px;
-  padding: 0.5rem 1.3rem;
-  margin-left: 1.5rem;
-  font-size: 1.08rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-  text-decoration: none;
-  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-  cursor: pointer;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-}
-.nav-contact-btn:hover, .nav-contact-btn:focus {
-  background: #5E35B1;
-  color: #fff;
-}
 .nav-toggle {
   display: none;
   background: none;
@@ -849,11 +830,6 @@ section, .about-card, .project-card, .contact-form {
     max-height: 400px;
     padding: 1rem 0;
   }
-  .nav-contact-btn {
-    margin: 1rem 0 0 0;
-    width: 90%;
-    text-align: center;
-  }
   .nav-toggle {
     display: block;
   }
@@ -892,18 +868,18 @@ section, .about-card, .project-card, .contact-form {
   justify-content: center;
 }
 .education-card {
+  flex: 1 1 320px;
+  max-width: 350px;
+  min-width: 220px;
+  margin: 0 auto;
   background: #ede7f6;
   border-radius: 16px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.10);
   padding: 2rem 1.5rem;
-  flex: 1 1 320px;
-  max-width: 350px;
-  min-width: 220px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin: 0 auto;
   border: 1.2px solid #d1c4e9;
 }
 .education-icon {
@@ -950,4 +926,53 @@ section, .about-card, .project-card, .contact-form {
     align-items: center;
     text-align: center;
   }
+}
+
+/* Flip Card Styles */
+.flip-card {
+  perspective: 1500px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  cursor: pointer;
+  height: 280px; /* Explicit height for flip */
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  
+  /* Re-apply visual styles from .education-card */
+  background: #ede7f6;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1.2px solid #d1c4e9;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  background-color: #e0c9f5;
 }
