@@ -592,6 +592,12 @@ main > section:not(:first-child) {
   transform: scale(1.1);
 }
 
+.linkedin-badge-container {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+}
+
 footer {
   position: static;
   left: unset;
