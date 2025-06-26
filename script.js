@@ -17,15 +17,34 @@ document.addEventListener('DOMContentLoaded', () => {
   // 2. Smooth scroll for nav links
   document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', function(e) {
+      e.preventDefault();
       const href = this.getAttribute('href');
+      
       if (href && href.startsWith('#')) {
-        const target = document.querySelector(href);
+        const targetId = href.substring(1);
+        const target = document.getElementById(targetId);
+        
         if (target) {
-          e.preventDefault();
-          window.scrollTo({
-            top: target.offsetTop - 40,
-            behavior: 'smooth'
+          const navbarHeight = 100; // Account for fixed navbar
+          const targetPosition = target.offsetTop - navbarHeight;
+          
+          // Use scrollIntoView for better browser compatibility
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
           });
+          
+          // Fallback for older browsers
+          setTimeout(() => {
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+          }, 100);
+          
+          console.log('Scrolling to section:', targetId);
+        } else {
+          console.error('Section not found:', targetId);
         }
       }
     });
@@ -88,5 +107,23 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }, { threshold: 0.3 });
     aboutObserver.observe(aboutTypeTarget);
+  }
+
+  // Hamburger menu toggle for mobile
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', function() {
+      const isOpen = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen);
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 900) {
+          navLinks.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
   }
 });

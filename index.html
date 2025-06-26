@@ -13,11 +13,17 @@
       <div class="nav-brand">
         <span class="brand-text">MALAI RAJ R</span>
       </div>
-      <ul class="nav-links">
+      <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-links">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
         <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -30,8 +36,8 @@
           <img src="images/home.jpg" alt="Hero" class="hero-image">
         </div>
         <h1 class="hero-title">MALAI RAJ R</h1>
-        <h2 class="hero-subtitle">Data Analyst</h2>
-        <p class="hero-intro">Turning data into actionable insights. I specialize in data visualization, statistical analysis, and building data-driven solutions for business growth.</p>
+        <h2 class="hero-subtitle">Masters in Data Science</h2>
+        <p class="hero-intro">Passionate web developer and data science student specializing in creating intelligent, data-driven web applications. I combine modern frontend technologies with powerful data analytics to build solutions that drive business growth and user engagement.</p>
         <div class="hero-buttons">
           <a href="#contact" class="cta-btn">Let's Connect</a>
           <a href="resume.pdf" class="cta-btn secondary-btn" download>Download CV</a>
@@ -43,7 +49,7 @@
       <h2>About Me</h2>
       <div class="about-container">
         <div class="about-animative">
-          <span class="about-typewriter" data-text="As a web developer pursuing a Master's in Data Science, I bridge the gap between creative design and data-driven functionality.\nI specialize in building responsive, user-friendly frontends with modern technologies like React and integrating powerful APIs.\nMy goal is to create intelligent, scalable web applications that not only look great but also solve meaningful problems.\nI'm passionate about clean code and continuous learning.\nI believe in the power of data and design to drive innovation and impact."></span>
+          <span class="about-typewriter" data-text="As a web developer pursuing a Master's in Data Science at Coimbatore Institute of Technology, I bridge the gap between creative design and data-driven functionality. I specialize in building responsive, user-friendly frontends with modern technologies like React, Node.js, and integrating powerful APIs. My expertise includes data visualization, statistical analysis, and machine learning basics. I am passionate about creating intelligent, scalable web applications that not only look great but also solve meaningful problems through data insights. I believe in the power of clean code, continuous learning, and the synergy between data science and web development to drive innovation and create impactful solutions."></span>
         </div>
         <div class="about-image-container">
           <img src="images/aboutme.jpg" alt="Profile photo" class="about-image">
@@ -55,14 +61,135 @@
       <h2>Education</h2>
       <div class="education-timeline">
         <div class="education-card education-card--school">
-          <h3>MSc Data Science</h3>
-          <span class="edu-school">Prestige University</span>
-          <span class="edu-years">2022 — 2024</span>
+          <img src="https://img.icons8.com/clouds/100/000000/school.png" alt="Animated School" class="edu-animated-image" style="width:90px;height:90px;display:block;margin:0 auto 1rem;"/>
+          <h3>School Education</h3>
+          <span class="edu-school">GREEN VALLEY MATRICULATION SCHOOL</span>
         </div>
         <div class="education-card education-card--college">
-          <h3>BSc Computer Science</h3>
-          <span class="edu-school">Green Valley College</span>
-          <span class="edu-years">2019 — 2022</span>
+          <img src="https://img.icons8.com/clouds/100/000000/graduation-cap.png" alt="Animated College" class="edu-animated-image" style="width:90px;height:90px;display:block;margin:0 auto 1rem;"/>
+          <h3>Pursuing MSc Data Science</h3>
+          <span class="edu-school">COIMBATORE INSTITUTE OF TECHNOLOGY</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="skills-section">
+      <h2>Skills</h2>
+      <p class="section-subtitle">A broad set of technical skills across programming, web, data, and cloud.</p>
+      <div class="skills-container">
+        <div class="skills-card">
+          <h3>Programming Languages</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <span class="skill-name">Python</span>
+              <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">JavaScript</span>
+              <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">SQL</span>
+              <div class="skill-bar"><div class="skill-progress" style="width: 82%"></div></div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">C</span>
+              <div class="skill-bar"><div class="skill-progress" style="width: 70%"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="skills-card">
+          <h3>Web Technologies</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <span class="skill-name">HTML5</span>
+              <div class="skill-bar"><div class="skill-progress" style="width: 95%"></div></div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">CSS3</span>
+              <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">RESTful APIs</span>
+              <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Responsive Design</span>
+              <div class="skill-bar"><div class="skill-progress" style="width: 92%"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="skills-card">
+          <h3>Frameworks & Libraries</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <span class="skill-name">React</span>
+              <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Bootstrap</span>
+              <div class="skill-bar"><div class="skill-progress" style="width: 88%"></div></div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Node.js</span>
+              <div class="skill-bar"><div class="skill-progress" style="width: 75%"></div></div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Express.js</span>
+              <div class="skill-bar"><div class="skill-progress" style="width: 70%"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="skills-card">
+          <h3>Databases</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <span class="skill-name">MongoDB</span>
+              <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">MySQL</span>
+              <div class="skill-bar"><div class="skill-progress" style="width: 82%"></div></div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">PostgreSQL</span>
+              <div class="skill-bar"><div class="skill-progress" style="width: 72%"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="skills-card">
+          <h3>Tools & Platforms</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <span class="skill-name">Git & GitHub</span>
+              <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">AWS Cloud</span>
+              <div class="skill-bar"><div class="skill-progress" style="width: 65%"></div></div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">VS Code</span>
+              <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="skills-card">
+          <h3>Data & Analytics</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <span class="skill-name">Data Analysis</span>
+              <div class="skill-bar"><div class="skill-progress" style="width: 88%"></div></div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Data Visualization</span>
+              <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Machine Learning (Basics)</span>
+              <div class="skill-bar"><div class="skill-progress" style="width: 60%"></div></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -72,24 +199,34 @@
       <p class="section-subtitle">A selection of my data analytics and web application projects.</p>
       <div class="projects-cards">
         <div class="projects-card">
+          <img src="https://img.icons8.com/color/96/mental-health.png" alt="Mental Health Monitoring" class="project-image" style="width:80px;height:80px;display:block;margin:0 auto 1rem;"/>
           <h3>Eunoia</h3>
           <p>A mental health monitoring web application that leverages AI to analyze user sentiment, detect early warning signs, and provide supportive resources.</p>
           <a href="https://github.com/MALAIRAJ23/webproject" target="_blank" class="cta-btn" rel="noopener">View on GitHub</a>
         </div>
         <div class="projects-card">
+          <img src="https://img.icons8.com/color/96/cloud--v1.png" alt="Weather App" class="project-image" style="width:80px;height:80px;display:block;margin:0 auto 1rem;"/>
           <h3>Weather App</h3>
           <p>A real-time weather dashboard using geolocation and APIs. Users can check current weather, forecasts, and get location-based updates.</p>
-          <a href="https://github.com/MALAIRAJ23/PRODIGY_TrackCode_TaskNumber/tree/main/PRODIGY_WD_05" target="_blank" class="cta-btn" rel="noopener">View on GitHub</a>
+          <a href="https://github.com/MALAIRAJ23/ADV-WEATHER-APP" target="_blank" class="cta-btn" rel="noopener">View on GitHub</a>
         </div>
         <div class="projects-card">
+          <img src="images/home.jpg" alt="Portfolio Screenshot" class="project-image" style="width:80px;height:80px;object-fit:cover;display:block;margin:0 auto 1rem;"/>
           <h3>Portfolio</h3>
           <p>This portfolio site showcases my skills, projects, and design sense. Built with modern CSS and interactive animations for a smooth user experience.</p>
           <a href="https://github.com/MALAIRAJ23/PORTFOLIO-ME" target="_blank" class="cta-btn" rel="noopener">View on GitHub</a>
         </div>
         <div class="projects-card">
+          <img src="https://img.icons8.com/color/96/car--v1.png" alt="Carpooling App" class="project-image" style="width:80px;height:80px;display:block;margin:0 auto 1rem;"/>
           <h3>COIMBUDDY</h3>
           <p>A carpooling app designed to connect commuters, reduce travel costs, and promote eco-friendly transportation in the city.</p>
-          <a href="#" target="_blank" class="cta-btn" rel="noopener">View on GitHub</a>
+          <a href="https://github.com/MALAIRAJ23/COIMBUDDY" target="_blank" class="cta-btn" rel="noopener">View on GitHub</a>
+        </div>
+        <div class="projects-card">
+          <img src="https://img.icons8.com/color/96/artificial-intelligence.png" alt="Smart Mask Prediction" class="project-image" style="width:80px;height:80px;display:block;margin:0 auto 1rem;"/>
+          <h3>SMART MASK PREDICTION</h3>
+          <p>A machine learning application that uses computer vision to predict and analyze mask usage patterns, helping ensure safety compliance in various environments.</p>
+          <a href="https://github.com/MALAIRAJ23/smartmaskprediction" target="_blank" class="cta-btn" rel="noopener">View on GitHub</a>
         </div>
       </div>
     </section>
@@ -99,11 +236,12 @@
       <p class="section-subtitle">Let's work together or just say hello!</p>
       <div class="contact-social">
         <a href="mailto:malai2326raj@gmail.com" aria-label="Email" target="_blank"><img src="https://img.icons8.com/ios-filled/50/2563eb/new-post.png" alt="Email"/></a>
+        <a href="tel:+916374305567" aria-label="Phone"><img src="https://img.icons8.com/ios-filled/50/2563eb/phone.png" alt="Phone"/></a>
         <a href="https://github.com/MALAIRAJ23" target="_blank" aria-label="GitHub"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub"/></a>
         <a href="https://www.linkedin.com/in/malai-raj-8ba975292" target="_blank" aria-label="LinkedIn"><img src="https://img.icons8.com/ios-filled/50/2563eb/linkedin.png" alt="LinkedIn"/></a>
       </div>
       <footer>
-        <p>© 2025 MALAI RAJ R — Data Analyst Portfolio</p>
+        <p>© 2025 MALAI RAJ R | Web Developer & Data Science Student</p>
       </footer>
     </section>
   </main>
