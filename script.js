@@ -1,70 +1,52 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // Typewriter effect for headline
-  const typeTarget = document.querySelector(".typewriter");
-  if (typeTarget) {
-    const text = typeTarget.dataset.text;
-    let i = 0;
-    function typeWriter() {
-      if (i < text.length) {
-        typeTarget.textContent += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, 100);
+document.addEventListener('DOMContentLoaded', () => {
+  // 1. IntersectionObserver for section and card reveals
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = 1;
+        entry.target.style.transform = 'translateY(0)';
+        obs.unobserve(entry.target);
       }
-    }
-    typeWriter();
-  }
+    });
+  }, { threshold: 0.15 });
 
-  // Enhanced scroll-based animation trigger
-  const observer = new IntersectionObserver(
-    (entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          if (entry.target.classList.contains('about-card')) {
-            entry.target.classList.add('animate-slide-in-left');
-          } else if (entry.target.classList.contains('skills-list')) {
-            entry.target.classList.add('animate-fade-in-up');
-            // Animate each skill icon with stagger
-            entry.target.querySelectorAll('li').forEach((li, idx) => {
-              setTimeout(() => li.classList.add('animate-pop-in'), idx * 120);
-            });
-          } else if (entry.target.classList.contains('project-grid')) {
-            // Animate each project card with stagger
-            entry.target.querySelectorAll('.project-card').forEach((card, idx) => {
-              card.classList.add('animate-fade-in');
-              card.classList.add('stagger-' + (idx + 1));
-            });
-          } else if (entry.target.classList.contains('contact-form')) {
-            entry.target.classList.add('animate-slide-in-right');
-          } else {
-            entry.target.classList.add('animate-fade-in');
-          }
-          obs.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.2 }
-  );
-
-  document.querySelectorAll("section, .about-card, .skills-list, .project-grid, .contact-form").forEach(sec => {
-    observer.observe(sec);
+  document.querySelectorAll('section, .about-card, .work-card, .experience-card, .education-card, .blog-card').forEach(el => {
+    observer.observe(el);
   });
 
-  // Mobile nav toggle for new glass-navbar
-  const navToggle = document.querySelector('.nav-toggle');
-  const navLinks = document.querySelector('.nav-links');
-  if (navToggle && navLinks) {
-    navToggle.addEventListener('click', () => {
-      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-      navToggle.setAttribute('aria-expanded', !expanded);
-      navLinks.classList.toggle('open');
+  // 2. Smooth scroll for nav links
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          window.scrollTo({
+            top: target.offsetTop - 40,
+            behavior: 'smooth'
+          });
+        }
+      }
     });
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        navToggle.setAttribute('aria-expanded', 'false');
-      });
+  });
+
+  // 3. Micro-interaction pop for social icons
+  document.querySelectorAll('.contact-social a img').forEach(img => {
+    img.addEventListener('mouseenter', () => {
+      img.style.transition = 'transform 0.18s cubic-bezier(.4,2,.2,1)';
+      img.style.transform = 'scale(1.18) rotate(-6deg)';
     });
-  }
+    img.addEventListener('mouseleave', () => {
+      img.style.transform = '';
+    });
+    img.addEventListener('mousedown', () => {
+      img.style.transform = 'scale(0.92) rotate(2deg)';
+    });
+    img.addEventListener('mouseup', () => {
+      img.style.transform = 'scale(1.18) rotate(-6deg)';
+    });
+  });
 
   // Navbar blend effect on scroll
   const navbar = document.querySelector('.navbar');
@@ -78,46 +60,33 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Contact form validation (basic)
-  const contactForm = document.querySelector('.contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      // Simple validation
-      const name = contactForm.name.value.trim();
-      const email = contactForm.email.value.trim();
-      const message = contactForm.message.value.trim();
-      if (!name || !email || !message) {
-        alert('Please fill in all fields.');
-        return;
-      }
-      // You can replace this with AJAX/email service
-      alert('Thank you for reaching out, ' + name + '! I will get back to you soon.');
-      contactForm.reset();
-    });
-  }
-
-  // Scroll-to-top button
-  const scrollBtn = document.createElement('button');
-  scrollBtn.id = 'scrollToTopBtn';
-  scrollBtn.innerHTML = '↑';
-  document.body.appendChild(scrollBtn);
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-      scrollBtn.classList.add('show');
-    } else {
-      scrollBtn.classList.remove('show');
-    }
-  });
-  scrollBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-
-  // Flip card logic for education section
-  const schoolCard = document.getElementById('school-card');
-  if (schoolCard) {
-    schoolCard.addEventListener('click', () => {
-      schoolCard.classList.toggle('flipped');
-    });
+  // Typewriter effect for About Me section on scroll
+  const aboutTypeTarget = document.querySelector('.about-typewriter');
+  let aboutTyped = false;
+  if (aboutTypeTarget) {
+    const aboutText = aboutTypeTarget.dataset.text;
+    const aboutObserver = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !aboutTyped) {
+          aboutTyped = true;
+          let i = 0;
+          function typeWriter() {
+            if (i < aboutText.length) {
+              if (aboutText.substr(i, 2) === '\n') {
+                aboutTypeTarget.innerHTML += '<br>';
+                i += 2;
+              } else {
+                aboutTypeTarget.innerHTML += aboutText.charAt(i);
+                i++;
+              }
+              setTimeout(typeWriter, 18);
+            }
+          }
+          typeWriter();
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    aboutObserver.observe(aboutTypeTarget);
   }
 });
