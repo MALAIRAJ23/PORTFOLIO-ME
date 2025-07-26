@@ -1,126 +1,90 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. IntersectionObserver for section and card reveals
-  const observer = new IntersectionObserver((entries, obs) => {
+
+  // --- Custom Cursor Logic ---
+  const cursor = document.querySelector('.cursor');
+  const follower = document.querySelector('.cursor-follower');
+  
+  document.addEventListener('mousemove', e => {
+    cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+    follower.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+  });
+
+  document.querySelectorAll('.interactive').forEach(el => {
+    el.addEventListener('mouseenter', () => document.body.classList.add('interactive-hover'));
+    el.addEventListener('mouseleave', () => document.body.classList.remove('interactive-hover'));
+  });
+
+  // --- 3D Card Tilt Effect ---
+  document.querySelectorAll('.bento-card, .education-card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const { width, height } = rect;
+      const rotateX = (y - height / 2) / (height / 2);
+      const rotateY = (x - width / 2) / (width / 2);
+      const tiltStrength = card.style.getPropertyValue('--tilt-strength') || 5;
+
+      card.style.transform = `perspective(1000px) rotateX(${-rotateX * tiltStrength}deg) rotateY(${rotateY * tiltStrength}deg) scale3d(1.03, 1.03, 1.03)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+    });
+  });
+
+  // --- Active Nav Link on Scroll ---
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+  
+  const sectionObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.style.opacity = 1;
-        entry.target.style.transform = 'translateY(0)';
-        obs.unobserve(entry.target);
+        const id = entry.target.getAttribute('id');
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+        });
       }
     });
-  }, { threshold: 0.15 });
+  }, { rootMargin: '-30% 0px -70% 0px' });
 
-  document.querySelectorAll('section, .about-card, .work-card, .experience-card, .education-card, .blog-card').forEach(el => {
-    observer.observe(el);
-  });
+  sections.forEach(section => sectionObserver.observe(section));
 
-  // 2. Smooth scroll for nav links
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      const href = this.getAttribute('href');
-      
-      if (href && href.startsWith('#')) {
-        const targetId = href.substring(1);
-        const target = document.getElementById(targetId);
-        
-        if (target) {
-          const navbarHeight = 100; // Account for fixed navbar
-          const targetPosition = target.offsetTop - navbarHeight;
-          
-          // Use scrollIntoView for better browser compatibility
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-          
-          // Fallback for older browsers
+
+  // --- Skill Tag "Loading" Animation on Scroll ---
+  const skillCardObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const skillTags = entry.target.querySelectorAll('.skill-tag');
+        skillTags.forEach((tag, index) => {
           setTimeout(() => {
-            window.scrollTo({
-              top: targetPosition,
-              behavior: 'smooth'
-            });
-          }, 100);
-          
-          console.log('Scrolling to section:', targetId);
-        } else {
-          console.error('Section not found:', targetId);
-        }
+            tag.classList.add('is-visible');
+          }, index * 100); // Staggered delay for each tag
+        });
+        observer.unobserve(entry.target); // Animate only once
       }
     });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll('.skill-card').forEach(card => {
+    skillCardObserver.observe(card);
   });
 
-  // 3. Micro-interaction pop for social icons
-  document.querySelectorAll('.contact-social a img').forEach(img => {
-    img.addEventListener('mouseenter', () => {
-      img.style.transition = 'transform 0.18s cubic-bezier(.4,2,.2,1)';
-      img.style.transform = 'scale(1.18) rotate(-6deg)';
-    });
-    img.addEventListener('mouseleave', () => {
-      img.style.transform = '';
-    });
-    img.addEventListener('mousedown', () => {
-      img.style.transform = 'scale(0.92) rotate(2deg)';
-    });
-    img.addEventListener('mouseup', () => {
-      img.style.transform = 'scale(1.18) rotate(-6deg)';
-    });
-  });
 
-  // Navbar blend effect on scroll
-  const navbar = document.querySelector('.navbar');
-  if (navbar) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) { // Apply effect after 50px scroll
-        navbar.classList.add('navbar-scrolled');
-      } else {
-        navbar.classList.remove('navbar-scrolled');
-      }
-    });
-  }
-
-  // Typewriter effect for About Me section on scroll
-  const aboutTypeTarget = document.querySelector('.about-typewriter');
-  let aboutTyped = false;
-  if (aboutTypeTarget) {
-    const aboutText = aboutTypeTarget.dataset.text;
-    const aboutObserver = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && !aboutTyped) {
-          aboutTyped = true;
-          let i = 0;
-          function typeWriter() {
-            if (i < aboutText.length) {
-              if (aboutText.substr(i, 2) === '\n') {
-                aboutTypeTarget.innerHTML += '<br>';
-                i += 2;
-              } else {
-                aboutTypeTarget.innerHTML += aboutText.charAt(i);
-                i++;
-              }
-              setTimeout(typeWriter, 18);
-            }
-          }
-          typeWriter();
-          obs.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.3 });
-    aboutObserver.observe(aboutTypeTarget);
-  }
-
-  // Hamburger menu toggle for mobile
+  // --- Mobile Navbar Toggle ---
   const navToggle = document.querySelector('.nav-toggle');
-  const navLinks = document.querySelector('.nav-links');
-  if (navToggle && navLinks) {
-    navToggle.addEventListener('click', function() {
-      const isOpen = navLinks.classList.toggle('open');
-      navToggle.setAttribute('aria-expanded', isOpen);
+  const navMenu = document.querySelector('.nav-links');
+
+  if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', navMenu.classList.contains('open'));
     });
-    navLinks.querySelectorAll('a').forEach(link => {
+
+    navMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        if (window.innerWidth <= 900) {
-          navLinks.classList.remove('open');
+        if (navMenu.classList.contains('open')) {
+          navMenu.classList.remove('open');
           navToggle.setAttribute('aria-expanded', 'false');
         }
       });

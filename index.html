@@ -3,248 +3,195 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MALAI RAJ R | Data Analyst Portfolio</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap"/>
+  <title>MALAI RAJ R | Data & Web Portfolio</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap"/>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+
   <header>
     <nav class="navbar" aria-label="Main Navigation">
       <div class="nav-brand">
-        <span class="brand-text">MALAI RAJ R</span>
+        <a href="#home" class="interactive">MALAI RAJ R</a>
       </div>
-      <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-links">
+      <button class="nav-toggle interactive" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-links">
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
       </button>
       <ul class="nav-links" id="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#home" class="interactive nav-link">Home</a></li>
+        <li><a href="#about" class="interactive nav-link">About</a></li>
+        <li><a href="#skills" class="interactive nav-link">Skills</a></li>
+        <li><a href="#projects" class="interactive nav-link">Projects</a></li>
+        <li><a href="#education" class="interactive nav-link">Education</a></li>
+        <li><a href="#contact" class="interactive nav-link">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
     <section id="home" class="hero">
-      <div class="hero-content">
-        <div class="hero-image-container">
-          <img src="images/home.jpg" alt="Hero" class="hero-image">
-        </div>
+      <div class="hero-image-container interactive">
+        <img src="images/home.jpg" alt="A professional portrait of Malai Raj R" class="hero-image">
+      </div>
+      <div class="hero-text-content">
         <h1 class="hero-title">MALAI RAJ R</h1>
-        <h2 class="hero-subtitle">Masters in Data Science</h2>
-        <p class="hero-intro">Passionate web developer and data science student specializing in creating intelligent, data-driven web applications. I combine modern frontend technologies with powerful data analytics to build solutions that drive business growth and user engagement.</p>
+        <h2 class="hero-subtitle">MSc Data Science Student | Full-Stack Developer</h2>
+        <p class="hero-intro">I design and build intelligent, data-driven applications that bridge the gap between user experience and powerful analytics.</p>
         <div class="hero-buttons">
-          <a href="#contact" class="cta-btn">Let's Connect</a>
-          <a href="resume.pdf" class="cta-btn secondary-btn" download>Download CV</a>
+          <a href="#projects" class="cta-btn interactive">View My Work</a>
+          <a href="resume.pdf" class="cta-btn secondary-btn interactive" download>Download CV</a>
         </div>
       </div>
     </section>
 
     <section id="about" class="about-section">
-      <h2>About Me</h2>
+      <h2 class="section-title">About Me</h2>
       <div class="about-container">
         <div class="about-animative">
-          <span class="about-typewriter" data-text="As a web developer pursuing a Master's in Data Science at Coimbatore Institute of Technology, I bridge the gap between creative design and data-driven functionality. I specialize in building responsive, user-friendly frontends with modern technologies like React, Node.js, and integrating powerful APIs. My expertise includes data visualization, statistical analysis, and machine learning basics. I am passionate about creating intelligent, scalable web applications that not only look great but also solve meaningful problems through data insights. I believe in the power of clean code, continuous learning, and the synergy between data science and web development to drive innovation and create impactful solutions."></span>
+          <p>As a Master's student at **Coimbatore Institute of Technology**, I merge the worlds of creative web development and rigorous data science. My passion lies in building scalable, responsive applications with technologies like **React** and **Node.js**, while leveraging data analytics to extract meaningful insights. I believe the future of technology is in creating solutions that are not only beautifully designed but also intelligently driven by data.</p>
         </div>
-        <div class="about-image-container">
-          <img src="images/aboutme.jpg" alt="Profile photo" class="about-image">
-        </div>
-      </div>
-    </section>
-
-    <section id="education" class="education-section">
-      <h2>Education</h2>
-      <div class="education-timeline">
-        <div class="education-card education-card--school">
-          <img src="https://img.icons8.com/clouds/100/000000/school.png" alt="Animated School" class="edu-animated-image" style="width:90px;height:90px;display:block;margin:0 auto 1rem;"/>
-          <h3>School Education</h3>
-          <span class="edu-school">GREEN VALLEY MATRICULATION SCHOOL</span>
-        </div>
-        <div class="education-card education-card--college">
-          <img src="https://img.icons8.com/clouds/100/000000/graduation-cap.png" alt="Animated College" class="edu-animated-image" style="width:90px;height:90px;display:block;margin:0 auto 1rem;"/>
-          <h3>Pursuing MSc Data Science</h3>
-          <span class="edu-school">COIMBATORE INSTITUTE OF TECHNOLOGY</span>
+        <div class="about-image-container interactive">
+          <img src="images/aboutme.jpg" alt="A candid photo of Malai Raj R" class="about-image">
         </div>
       </div>
     </section>
 
     <section id="skills" class="skills-section">
-      <h2>Skills</h2>
-      <p class="section-subtitle">A broad set of technical skills across programming, web, data, and cloud.</p>
-      <div class="skills-container">
-        <div class="skills-card">
-          <h3>Programming Languages</h3>
-          <div class="skills-grid">
-            <div class="skill-item">
-              <span class="skill-name">Python</span>
-              <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+      <h2 class="section-title">Core Competencies</h2>
+      <div class="bento-grid skills-grid">
+        <div class="bento-card skill-card card-featured interactive" style="--tilt-strength: 2;">
+            <div class="featured-card-header">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                <h3>Data Science & Analytics</h3>
             </div>
-            <div class="skill-item">
-              <span class="skill-name">JavaScript</span>
-              <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">SQL</span>
-              <div class="skill-bar"><div class="skill-progress" style="width: 82%"></div></div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">C</span>
-              <div class="skill-bar"><div class="skill-progress" style="width: 70%"></div></div>
-            </div>
-          </div>
+            <ul class="skill-list">
+                <li class="skill-tag">Pandas</li>
+                <li class="skill-tag">NumPy</li>
+                <li class="skill-tag">Scikit-learn</li>
+                <li class="skill-tag">Matplotlib</li>
+                <li class="skill-tag">Seaborn</li>
+                <li class="skill-tag">Data Visualization</li>
+            </ul>
         </div>
-        <div class="skills-card">
-          <h3>Web Technologies</h3>
-          <div class="skills-grid">
-            <div class="skill-item">
-              <span class="skill-name">HTML5</span>
-              <div class="skill-bar"><div class="skill-progress" style="width: 95%"></div></div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">CSS3</span>
-              <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">RESTful APIs</span>
-              <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Responsive Design</span>
-              <div class="skill-bar"><div class="skill-progress" style="width: 92%"></div></div>
-            </div>
-          </div>
+        <div class="bento-card skill-card interactive" style="--tilt-strength: 5;">
+            <h3>Programming Languages</h3>
+            <ul class="skill-list">
+                <li class="skill-tag">Python</li>
+                <li class="skill-tag">JavaScript</li>
+                <li class="skill-tag">SQL</li>
+                <li class="skill-tag">C</li>
+            </ul>
         </div>
-        <div class="skills-card">
-          <h3>Frameworks & Libraries</h3>
-          <div class="skills-grid">
-            <div class="skill-item">
-              <span class="skill-name">React</span>
-              <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Bootstrap</span>
-              <div class="skill-bar"><div class="skill-progress" style="width: 88%"></div></div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Node.js</span>
-              <div class="skill-bar"><div class="skill-progress" style="width: 75%"></div></div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Express.js</span>
-              <div class="skill-bar"><div class="skill-progress" style="width: 70%"></div></div>
-            </div>
-          </div>
+        <div class="bento-card skill-card interactive" style="--tilt-strength: 5;">
+            <h3>Frontend Development</h3>
+            <ul class="skill-list">
+                <li class="skill-tag">React</li>
+                <li class="skill-tag">HTML5</li>
+                <li class="skill-tag">CSS3</li>
+            </ul>
         </div>
-        <div class="skills-card">
-          <h3>Databases</h3>
-          <div class="skills-grid">
-            <div class="skill-item">
-              <span class="skill-name">MongoDB</span>
-              <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">MySQL</span>
-              <div class="skill-bar"><div class="skill-progress" style="width: 82%"></div></div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">PostgreSQL</span>
-              <div class="skill-bar"><div class="skill-progress" style="width: 72%"></div></div>
-            </div>
-          </div>
+        <div class="bento-card skill-card card-wide interactive" style="--tilt-strength: 4;">
+            <h3>Backend & Databases</h3>
+            <ul class="skill-list">
+                <li class="skill-tag">Node.js</li>
+                <li class="skill-tag">Express.js</li>
+                <li class="skill-tag">REST APIs</li>
+                <li class="skill-tag">MySQL</li>
+                <li class="skill-tag">MongoDB</li>
+            </ul>
         </div>
-        <div class="skills-card">
-          <h3>Tools & Platforms</h3>
-          <div class="skills-grid">
-            <div class="skill-item">
-              <span class="skill-name">Git & GitHub</span>
-              <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">AWS Cloud</span>
-              <div class="skill-bar"><div class="skill-progress" style="width: 65%"></div></div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">VS Code</span>
-              <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
-            </div>
-          </div>
-        </div>
-        <div class="skills-card">
-          <h3>Data & Analytics</h3>
-          <div class="skills-grid">
-            <div class="skill-item">
-              <span class="skill-name">Data Analysis</span>
-              <div class="skill-bar"><div class="skill-progress" style="width: 88%"></div></div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Data Visualization</span>
-              <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Machine Learning (Basics)</span>
-              <div class="skill-bar"><div class="skill-progress" style="width: 60%"></div></div>
-            </div>
-          </div>
+        <div class="bento-card skill-card card-wide interactive" style="--tilt-strength: 4;">
+            <h3>Tools & Platforms</h3>
+            <ul class="skill-list">
+                <li class="skill-tag">Git & GitHub</li>
+                <li class="skill-tag">VS Code</li>
+                <li class="skill-tag">AWS (Basics)</li>
+            </ul>
         </div>
       </div>
     </section>
 
     <section id="projects" class="projects-section">
-      <h2>Projects</h2>
-      <p class="section-subtitle">A selection of my data analytics and web application projects.</p>
-      <div class="projects-cards">
-        <div class="projects-card">
-          <img src="https://img.icons8.com/color/96/mental-health.png" alt="Mental Health Monitoring" class="project-image" style="width:80px;height:80px;display:block;margin:0 auto 1rem;"/>
-          <h3>Eunoia</h3>
-          <p>A mental health monitoring web application that leverages AI to analyze user sentiment, detect early warning signs, and provide supportive resources.</p>
-          <a href="https://github.com/MALAIRAJ23/webproject" target="_blank" class="cta-btn" rel="noopener">View on GitHub</a>
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="bento-grid projects-grid">
+            <div class="bento-card project-card card-large interactive" style="--tilt-strength: 4;">
+                <img src="images/project1_eunoia.jpg" alt="Eunoia App Screenshot" class="project-image"/>
+                <div class="card-content">
+                  <h3>Eunoia - AI Mental Health App</h3>
+                  <p>A web app leveraging sentiment analysis to provide supportive mental health resources.</p>
+                  <a href="https://github.com/MALAIRAJ23/webproject" target="_blank" class="project-link interactive" rel="noopener">View on GitHub</a>
+                </div>
+            </div>
+            <div class="bento-card project-card interactive" style="--tilt-strength: 8;">
+                <img src="images/project2_weather.jpg" alt="Weather App Screenshot" class="project-image"/>
+                 <div class="card-content">
+                  <h3>Advanced Weather App</h3>
+                  <p>Real-time weather dashboard using geolocation and external APIs.</p>
+                  <a href="https://github.com/MALAIRAJ23/ADV-WEATHER-APP" target="_blank" class="project-link interactive" rel="noopener">View on GitHub</a>
+                </div>
+            </div>
+            <div class="bento-card project-card interactive" style="--tilt-strength: 8;">
+                <img src="images/project3_mask.jpg" alt="Mask Prediction App Screenshot" class="project-image"/>
+                <div class="card-content">
+                  <h3>Smart Mask Prediction</h3>
+                  <p>A computer vision model for real-time mask detection to ensure safety compliance.</p>
+                  <a href="https://github.com/MALAIRAJ23/smartmaskprediction" target="_blank" class="project-link interactive" rel="noopener">View on GitHub</a>
+                </div>
+            </div>
+             <div class="bento-card project-card card-large interactive" style="--tilt-strength: 4;">
+                <img src="images/project4_coimbuddy.jpg" alt="Coimbuddy App Screenshot" class="project-image"/>
+                <div class="card-content">
+                  <h3>COIMBUDDY Carpooling</h3>
+                  <p>Full-stack application to connect commuters in Coimbatore, featuring user auth and trip matching.</p>
+                  <a href="https://github.com/MALAIRAJ23/COIMBUDDY" target="_blank" class="project-link interactive" rel="noopener">View on GitHub</a>
+                </div>
+            </div>
         </div>
-        <div class="projects-card">
-          <img src="https://img.icons8.com/color/96/cloud--v1.png" alt="Weather App" class="project-image" style="width:80px;height:80px;display:block;margin:0 auto 1rem;"/>
-          <h3>Weather App</h3>
-          <p>A real-time weather dashboard using geolocation and APIs. Users can check current weather, forecasts, and get location-based updates.</p>
-          <a href="https://github.com/MALAIRAJ23/ADV-WEATHER-APP" target="_blank" class="cta-btn" rel="noopener">View on GitHub</a>
+    </section>
+    
+    <section id="education" class="education-section">
+      <h2 class="section-title">Education</h2>
+      <div class="education-timeline">
+        <div class="education-card interactive">
+          <h3>MSc Data Science</h3>
+          <span class="edu-school">Coimbatore Institute of Technology</span>
+          <span class="edu-years">2024 - 2026 (Pursuing)</span>
         </div>
-        <div class="projects-card">
-          <img src="images/home.jpg" alt="Portfolio Screenshot" class="project-image" style="width:80px;height:80px;object-fit:cover;display:block;margin:0 auto 1rem;"/>
-          <h3>Portfolio</h3>
-          <p>This portfolio site showcases my skills, projects, and design sense. Built with modern CSS and interactive animations for a smooth user experience.</p>
-          <a href="https://github.com/MALAIRAJ23/PORTFOLIO-ME" target="_blank" class="cta-btn" rel="noopener">View on GitHub</a>
-        </div>
-        <div class="projects-card">
-          <img src="https://img.icons8.com/color/96/car--v1.png" alt="Carpooling App" class="project-image" style="width:80px;height:80px;display:block;margin:0 auto 1rem;"/>
-          <h3>COIMBUDDY</h3>
-          <p>A carpooling app designed to connect commuters, reduce travel costs, and promote eco-friendly transportation in the city.</p>
-          <a href="https://github.com/MALAIRAJ23/COIMBUDDY" target="_blank" class="cta-btn" rel="noopener">View on GitHub</a>
-        </div>
-        <div class="projects-card">
-          <img src="https://img.icons8.com/color/96/artificial-intelligence.png" alt="Smart Mask Prediction" class="project-image" style="width:80px;height:80px;display:block;margin:0 auto 1rem;"/>
-          <h3>SMART MASK PREDICTION</h3>
-          <p>A machine learning application that uses computer vision to predict and analyze mask usage patterns, helping ensure safety compliance in various environments.</p>
-          <a href="https://github.com/MALAIRAJ23/smartmaskprediction" target="_blank" class="cta-btn" rel="noopener">View on GitHub</a>
+        <div class="education-card interactive">
+          <h3>Higher Secondary Education</h3>
+          <span class="edu-school">Green Valley Matriculation School</span>
+          <span class="edu-years">Completed in 2021</span>
         </div>
       </div>
     </section>
 
     <section id="contact" class="contact-section">
-      <h2>Contact</h2>
-      <p class="section-subtitle">Let's work together or just say hello!</p>
+      <h2 class="section-title">Let's Connect</h2>
+      <p class="section-subtitle">I'm actively seeking new opportunities and collaborations. Feel free to reach out!</p>
       <div class="contact-social">
-        <a href="mailto:malai2326raj@gmail.com" aria-label="Email" target="_blank"><img src="https://img.icons8.com/ios-filled/50/2563eb/new-post.png" alt="Email"/></a>
-        <a href="tel:+916374305567" aria-label="Phone"><img src="https://img.icons8.com/ios-filled/50/2563eb/phone.png" alt="Phone"/></a>
-        <a href="https://github.com/MALAIRAJ23" target="_blank" aria-label="GitHub"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub"/></a>
-        <a href="https://www.linkedin.com/in/malai-raj-8ba975292" target="_blank" aria-label="LinkedIn"><img src="https://img.icons8.com/ios-filled/50/2563eb/linkedin.png" alt="LinkedIn"/></a>
+        <a href="mailto:malai2326raj@gmail.com" class="interactive" aria-label="Email" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/malai-raj-8ba975292" class="interactive" target="_blank" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+        </a>
+        <a href="https://github.com/MALAIRAJ23" class="interactive" target="_blank" aria-label="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+        </a>
+        <a href="tel:+916374305567" class="interactive" aria-label="Phone">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        </a>
       </div>
-      <footer>
-        <p>© 2025 MALAI RAJ R | Web Developer & Data Science Student</p>
-      </footer>
     </section>
   </main>
+
+  <footer>
+    <p>© 2025 MALAI RAJ R | malai2326raj@gmail.com | Phone: +91 63743055677</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
