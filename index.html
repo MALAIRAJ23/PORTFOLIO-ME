@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MALAI RAJ R | Data & Web Portfolio</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap"/>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap" />
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <div class="cursor"></div>
   <div class="cursor-follower"></div>
@@ -16,7 +19,8 @@
       <div class="nav-brand">
         <a href="#home" class="interactive">MALAI RAJ R</a>
       </div>
-      <button class="nav-toggle interactive" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-links">
+      <button class="nav-toggle interactive" aria-label="Open navigation" aria-expanded="false"
+        aria-controls="nav-links">
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
@@ -40,10 +44,30 @@
       <div class="hero-text-content">
         <h1 class="hero-title">MALAI RAJ R</h1>
         <h2 class="hero-subtitle">MSc Data Science Student | Full-Stack Developer</h2>
-        <p class="hero-intro">I design and build intelligent, data-driven applications that bridge the gap between user experience and powerful analytics.</p>
+        <p class="hero-intro">I design and build intelligent, data-driven applications that bridge the gap between user
+          experience and powerful analytics.</p>
         <div class="hero-buttons">
           <a href="#projects" class="cta-btn interactive">View My Work</a>
-          <a href="resume.pdf" class="cta-btn secondary-btn interactive" download>Download CV</a>
+          <div class="resume-dropdown-container">
+            <button class="cta-btn secondary-btn interactive resume-toggle" id="resume-toggle">Download CV</button>
+            <div class="resume-dropdown" id="resume-dropdown">
+              <a href="resume/MalaiRaj 20 DataScience.pdf" class="resume-option interactive" download>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                </svg>
+                Data Science Resume
+              </a>
+              <a href="resume/MalaiRaj 20 Software.pdf" class="resume-option interactive" download>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+                Software Resume
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -52,7 +76,13 @@
       <h2 class="section-title">About Me</h2>
       <div class="about-container">
         <div class="about-animative">
-          <p>As a Master's student at **Coimbatore Institute of Technology**, I merge the worlds of creative web development and rigorous data science. My passion lies in building scalable, responsive applications with technologies like **React** and **Node.js**, while leveraging data analytics to extract meaningful insights. I believe the future of technology is in creating solutions that are not only beautifully designed but also intelligently driven by data.</p>
+          <p>At Coimbatore Institute of Technology, I’ve found my sweet spot
+            at the intersection of full-stack development and data science.
+            I enjoy crafting smooth, responsive interfaces with React and Node.js,
+            then powering them with insights uncovered from data. My goal is to build applications that not only look
+            beautiful but also think smart. I’m constantly exploring new technologies to enhance user experience and
+            system performance. Driven by curiosity, I strive to create solutions that are scalable,
+            intelligent, and genuinely impactful.</p>
         </div>
         <div class="about-image-container interactive">
           <img src="images/aboutme.jpg" alt="A candid photo of Malai Raj R" class="about-image">
@@ -64,96 +94,208 @@
       <h2 class="section-title">Core Competencies</h2>
       <div class="bento-grid skills-grid">
         <div class="bento-card skill-card card-featured interactive" style="--tilt-strength: 2;">
-            <div class="featured-card-header">
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
-                <h3>Data Science & Analytics</h3>
-            </div>
-            <ul class="skill-list">
-                <li class="skill-tag">Pandas</li>
-                <li class="skill-tag">NumPy</li>
-                <li class="skill-tag">Scikit-learn</li>
-                <li class="skill-tag">Matplotlib</li>
-                <li class="skill-tag">Seaborn</li>
-                <li class="skill-tag">Data Visualization</li>
-            </ul>
+          <div class="featured-card-header">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+            </svg>
+            <h3>Machine Learning & Data Science</h3>
+          </div>
+          <ul class="skill-list">
+            <li class="skill-tag">Scikit-learn</li>
+            <li class="skill-tag">Regression & Classification Models</li>
+            <li class="skill-tag">Data Preprocessing</li>
+            <li class="skill-tag">Feature Engineering</li>
+            <li class="skill-tag">Model Evaluation</li>
+          </ul>
         </div>
         <div class="bento-card skill-card interactive" style="--tilt-strength: 5;">
-            <h3>Programming Languages</h3>
-            <ul class="skill-list">
-                <li class="skill-tag">Python</li>
-                <li class="skill-tag">JavaScript</li>
-                <li class="skill-tag">SQL</li>
-                <li class="skill-tag">C</li>
-            </ul>
+          <h3>Programming</h3>
+          <ul class="skill-list">
+            <li class="skill-tag">Python</li>
+          </ul>
         </div>
         <div class="bento-card skill-card interactive" style="--tilt-strength: 5;">
-            <h3>Frontend Development</h3>
-            <ul class="skill-list">
-                <li class="skill-tag">React</li>
-                <li class="skill-tag">HTML5</li>
-                <li class="skill-tag">CSS3</li>
-            </ul>
+          <h3>Data Tools</h3>
+          <ul class="skill-list">
+            <li class="skill-tag">SQL</li>
+            <li class="skill-tag">Pandas</li>
+            <li class="skill-tag">NumPy</li>
+            <li class="skill-tag">Power BI</li>
+          </ul>
         </div>
         <div class="bento-card skill-card card-wide interactive" style="--tilt-strength: 4;">
-            <h3>Backend & Databases</h3>
-            <ul class="skill-list">
-                <li class="skill-tag">Node.js</li>
-                <li class="skill-tag">Express.js</li>
-                <li class="skill-tag">REST APIs</li>
-                <li class="skill-tag">MySQL</li>
-                <li class="skill-tag">MongoDB</li>
-            </ul>
+          <h3>Frameworks & Web Development</h3>
+          <ul class="skill-list">
+            <li class="skill-tag">React</li>
+            <li class="skill-tag">Node.js</li>
+            <li class="skill-tag">Django</li>
+            <li class="skill-tag">Streamlit</li>
+          </ul>
         </div>
-        <div class="bento-card skill-card card-wide interactive" style="--tilt-strength: 4;">
-            <h3>Tools & Platforms</h3>
-            <ul class="skill-list">
-                <li class="skill-tag">Git & GitHub</li>
-                <li class="skill-tag">VS Code</li>
-                <li class="skill-tag">AWS (Basics)</li>
-            </ul>
+        <div class="bento-card skill-card interactive" style="--tilt-strength: 5;">
+          <h3>Cloud & Databases</h3>
+          <ul class="skill-list">
+            <li class="skill-tag">Firebase</li>
+            <li class="skill-tag">MongoDB</li>
+            <li class="skill-tag">MySQL</li>
+          </ul>
+        </div>
+        <div class="bento-card skill-card interactive" style="--tilt-strength: 5;">
+          <h3>Tools</h3>
+          <ul class="skill-list">
+            <li class="skill-tag">Git</li>
+            <li class="skill-tag">REST APIs</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Soft Skills Section -->
+      <h2 class="section-title" style="margin-top: 4rem;">Professional Skills</h2>
+      <div class="soft-skills-container">
+        <div class="soft-skill-card interactive">
+          <div class="soft-skill-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+              <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+          </div>
+          <h3>Analytical & Critical Thinking</h3>
+          <p>Breaking down complex problems and finding data-driven solutions</p>
+        </div>
+        <div class="soft-skill-card interactive">
+          <div class="soft-skill-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <h3>Team Collaboration</h3>
+          <p>Working seamlessly with diverse teams to achieve common goals</p>
+        </div>
+        <div class="soft-skill-card interactive">
+          <div class="soft-skill-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+          </div>
+          <h3>Effective Communication</h3>
+          <p>Clearly conveying ideas and technical concepts to stakeholders</p>
+        </div>
+        <div class="soft-skill-card interactive">
+          <div class="soft-skill-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+            </svg>
+          </div>
+          <h3>Quick Learning & Adaptability</h3>
+          <p>Rapidly acquiring new skills and adapting to evolving technologies</p>
         </div>
       </div>
     </section>
 
     <section id="projects" class="projects-section">
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="bento-grid projects-grid">
-            <div class="bento-card project-card card-large interactive" style="--tilt-strength: 4;">
-                <img src="images/eunoia project.png" alt="Eunoia App Screenshot" class="project-image"/>
-                <div class="card-content">
-                  <h3>Eunoia - AI Mental Health App</h3>
-                  <p>A web app leveraging sentiment analysis to provide supportive mental health resources.</p>
-                  <a href="https://github.com/MALAIRAJ23/webproject" target="_blank" class="project-link interactive" rel="noopener">View on GitHub</a>
-                </div>
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="bento-grid projects-grid">
+        <div class="bento-card project-card card-large interactive" style="--tilt-strength: 4;">
+          <img src="images/symAI.png" alt="SympAI App Screenshot" class="project-image" />
+          <div class="card-content">
+            <h3>SympAI — AI-Powered Symptom Checker</h3>
+            <p>Built an AI-driven symptom checker using React, Node.js, and HuggingFace/BERT to process text/voice
+              inputs and predict medical conditions in under 1.5 seconds. Integrated Firebase Authentication and
+              real-time analysis for a seamless, secure user experience.</p>
+            <div class="project-tech-stack">
+              <span class="tech-badge">React</span>
+              <span class="tech-badge">Node.js</span>
+              <span class="tech-badge">BERT</span>
+              <span class="tech-badge">Firebase</span>
             </div>
-            <div class="bento-card project-card interactive" style="--tilt-strength: 8;">
-                <img src="images/project2_weather.jpg" alt="Weather App Screenshot" class="project-image"/>
-                 <div class="card-content">
-                  <h3>Advanced Weather App</h3>
-                  <p>Real-time weather dashboard using geolocation and external APIs.</p>
-                  <a href="https://github.com/MALAIRAJ23/ADV-WEATHER-APP" target="_blank" class="project-link interactive" rel="noopener">View on GitHub</a>
-                </div>
-            </div>
-            <div class="bento-card project-card interactive" style="--tilt-strength: 8;">
-    <img src="images/smart review system.png" alt="Shoppers Verdict App Screenshot" class="project-image"/>
-    <div class="card-content">
-        <h3>Shoppers Verdict</h3>
-        <p>An AI-powered platform that collects and analyzes customer reviews to provide real-time shopping insights.</p>
-        <a href="https://github.com/MALAIRAJ23/Shoppers-verdict" target="_blank" class="project-link interactive" rel="noopener">View on GitHub</a>
-    </div>
-</div>
-
-             <div class="bento-card project-card card-large interactive" style="--tilt-strength: 4;">
-                <img src="images/COIMBUDDY PROJECT.png" alt="Coimbuddy App Screenshot" class="project-image"/>
-                <div class="card-content">
-                  <h3>COIMBUDDY Carpooling</h3>
-                  <p>Full-stack application to connect commuters in Coimbatore, featuring user auth and trip matching.</p>
-                  <a href="https://github.com/MALAIRAJ23/COIMBUDDY" target="_blank" class="project-link interactive" rel="noopener">View on GitHub</a>
-                </div>
-            </div>
+            <a href="https://github.com/MALAIRAJ23/SYMP-AI" target="_blank" class="project-link interactive"
+              rel="noopener">View on GitHub</a>
+          </div>
         </div>
+
+        <div class="bento-card project-card interactive" style="--tilt-strength: 8;">
+          <img src="images/eunoia.png" alt="Eunoia App Screenshot" class="project-image" />
+          <div class="card-content">
+            <h3>Eunoia — Personal Mental Wellness Web App</h3>
+            <p>Developed a full-stack Django application for journaling, sentiment analysis (NLTK VADER), and mood
+              prediction using Ridge Regression. Added Plotly dashboards and persistent user data with Django ORM +
+              optional Firestore sync.</p>
+            <div class="project-tech-stack">
+              <span class="tech-badge">Django</span>
+              <span class="tech-badge">NLTK</span>
+              <span class="tech-badge">Plotly</span>
+              <span class="tech-badge">Firestore</span>
+            </div>
+            <a href="https://github.com/MALAIRAJ23/eunoia_1" target="_blank" class="project-link interactive"
+              rel="noopener">View on GitHub</a>
+          </div>
+        </div>
+
+        <div class="bento-card project-card interactive" style="--tilt-strength: 8;">
+          <img src="images/coimbuddy.png" alt="Car Pooling App Screenshot" class="project-image" />
+          <div class="card-content">
+            <h3>Car Pooling Application — React + Firebase</h3>
+            <p>Built a city-scale ride-sharing system with Google Maps routing, dynamic pickup-point generation, and
+              real-time trip updates. Integrated Firebase for live chat, UPI payments, push notifications, and analytics
+              via Recharts.</p>
+            <div class="project-tech-stack">
+              <span class="tech-badge">React</span>
+              <span class="tech-badge">Firebase</span>
+              <span class="tech-badge">Google Maps</span>
+              <span class="tech-badge">Recharts</span>
+            </div>
+            <a href="https://github.com/MALAIRAJ23/COIMBUDDY" target="_blank" class="project-link interactive"
+              rel="noopener">View on GitHub</a>
+          </div>
+        </div>
+
+        <div class="bento-card project-card interactive" style="--tilt-strength: 8;">
+          <img src="images/Smartmask.png" alt="Smart Mask Recommendation Screenshot" class="project-image" />
+          <div class="card-content">
+            <h3>Smart Mask Recommendation System</h3>
+            <p>Designed a rule-based scoring engine analyzing 6+ health and environmental factors to recommend mask
+              types with risk scores. Implemented Flask REST APIs and a responsive interface delivering results in under
+              1 second.</p>
+            <div class="project-tech-stack">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">Flask</span>
+              <span class="tech-badge">REST API</span>
+              <span class="tech-badge">HTML/CSS/JS</span>
+            </div>
+            <a href="https://github.com/MALAIRAJ23/SMART-MASK-RECOMMENDATION" target="_blank"
+              class="project-link interactive" rel="noopener">View on GitHub</a>
+          </div>
+        </div>
+
+        <div class="bento-card project-card card-large interactive" style="--tilt-strength: 4;">
+          <img src="images/smartEdu.png" alt="Student Failure Prediction Screenshot" class="project-image" />
+          <div class="card-content">
+            <h3>Student Failure Prediction System</h3>
+            <p>Built a supervised ML system comparing 5 different models (Logistic Regression, Random Forest, SVM,
+              XGBoost, LightGBM) on 1,000+ student records, achieving ~90% accuracy. Deployed a Streamlit dashboard for
+              real-time Pass/Fail prediction and probability-based insights.</p>
+            <div class="project-tech-stack">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">Scikit-learn</span>
+              <span class="tech-badge">XGBoost</span>
+              <span class="tech-badge">Streamlit</span>
+            </div>
+            <a href="https://github.com/MALAIRAJ23/Student-failure-prediction" target="_blank"
+              class="project-link interactive" rel="noopener">View on GitHub</a>
+          </div>
+        </div>
+      </div>
     </section>
-    
+
     <section id="education" class="education-section">
       <h2 class="section-title">Education</h2>
       <div class="education-timeline">
@@ -175,16 +317,36 @@
       <p class="section-subtitle">I'm actively seeking new opportunities and collaborations. Feel free to reach out!</p>
       <div class="contact-social">
         <a href="mailto:malai2326raj@gmail.com" class="interactive" aria-label="Email" target="_blank">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
         </a>
-        <a href="https://www.linkedin.com/in/malai-raj-8ba975292" class="interactive" target="_blank" aria-label="LinkedIn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+        <a href="https://www.linkedin.com/in/malai-raj-8ba975292" class="interactive" target="_blank"
+          aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
         </a>
         <a href="https://github.com/MALAIRAJ23" class="interactive" target="_blank" aria-label="GitHub">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+            </path>
+          </svg>
         </a>
         <a href="tel:+916374305567" class="interactive" aria-label="Phone">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+            </path>
+          </svg>
         </a>
       </div>
     </section>
@@ -196,4 +358,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>

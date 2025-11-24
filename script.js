@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Custom Cursor Logic ---
   const cursor = document.querySelector('.cursor');
   const follower = document.querySelector('.cursor-follower');
-  
+
   document.addEventListener('mousemove', e => {
     cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
     follower.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Active Nav Link on Scroll ---
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-link');
-  
+
   const sectionObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -70,6 +70,11 @@ document.addEventListener('DOMContentLoaded', () => {
     skillCardObserver.observe(card);
   });
 
+  // Apply same animation to soft skill cards
+  document.querySelectorAll('.soft-skill-card').forEach(card => {
+    skillCardObserver.observe(card);
+  });
+
 
   // --- Mobile Navbar Toggle ---
   const navToggle = document.querySelector('.nav-toggle');
@@ -88,6 +93,24 @@ document.addEventListener('DOMContentLoaded', () => {
           navToggle.setAttribute('aria-expanded', 'false');
         }
       });
+    });
+  }
+
+  // --- Resume Dropdown Toggle ---
+  const resumeToggle = document.getElementById('resume-toggle');
+  const resumeDropdownContainer = document.querySelector('.resume-dropdown-container');
+
+  if (resumeToggle && resumeDropdownContainer) {
+    resumeToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      resumeDropdownContainer.classList.toggle('active');
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!resumeDropdownContainer.contains(e.target)) {
+        resumeDropdownContainer.classList.remove('active');
+      }
     });
   }
 });
