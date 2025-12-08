@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --- 3D Card Tilt Effect ---
-  document.querySelectorAll('.bento-card, .education-card').forEach(card => {
+  document.querySelectorAll('.bento-card:not(.project-card), .education-card').forEach(card => {
     card.addEventListener('mousemove', e => {
       const rect = card.getBoundingClientRect();
       const x = e.clientX - rect.left;
