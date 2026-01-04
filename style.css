@@ -812,6 +812,12 @@ footer {
   .hero {
     flex-direction: column;
     text-align: center;
+    padding: 1.5rem 1rem;
+  }
+
+  .hero-image-container {
+    width: 240px;
+    height: 240px;
   }
 
   .hero-text-content,
