@@ -113,4 +113,37 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // --- 3D Book Flip Toggle ---
+  // Removed - using simple card layout now
+
+  // --- EmailJS Contact Form ---
+  emailjs.init('sJqndMEU3YgHvpzqA');
+
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const statusEl = document.getElementById('form-status');
+      const submitBtn = this.querySelector('button[type="submit"]');
+      
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
+      
+      emailjs.sendForm('service_x9ndwpa', 'template_ef79pvl', this)
+        .then(function() {
+          statusEl.textContent = 'Message sent successfully!';
+          statusEl.className = 'form-status success';
+          contactForm.reset();
+          submitBtn.textContent = 'Send Message';
+          submitBtn.disabled = false;
+        }, function(error) {
+          console.error('EmailJS Error:', error);
+          statusEl.textContent = 'Failed to send: ' + (error.text || 'Please check your EmailJS settings');
+          statusEl.className = 'form-status error';
+          submitBtn.textContent = 'Send Message';
+          submitBtn.disabled = false;
+        });
+    });
+  }
 });
