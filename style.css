@@ -634,24 +634,39 @@ header {
 .education-timeline {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1rem;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .education-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-card);
-  padding: 1.5rem;
-  backdrop-filter: blur(10px);
-  transition: background 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s;
 }
 
 .education-card:hover {
-  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-5px);
+}
+
+.edu-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 4px 20px rgba(142, 45, 226, 0.4));
+  transition: all 0.3s ease;
+}
+
+.education-card:hover .edu-icon {
+  filter: drop-shadow(0 8px 30px rgba(142, 45, 226, 0.7));
+  transform: scale(1.1);
 }
 
 .education-card h3 {
   color: #fff;
+  margin-bottom: 0.5rem;
 }
 
 .edu-school {
