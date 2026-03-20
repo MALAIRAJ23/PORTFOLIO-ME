@@ -585,6 +585,12 @@ header {
   gap: 0.5rem;
 }
 
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
 .tech-badge {
   font-size: 0.75rem;
   padding: 0.35rem 0.7rem;
